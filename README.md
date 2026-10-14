@@ -8,6 +8,8 @@ Projeto de pesquisa em fase conceitual. A proposta é desenvolver um sistema que
 
 - [Brainstorming original](docs/brainstorming-original.txt): texto inicial preservado, com as hipóteses e promessas da primeira versão.
 - [Ideias e decisões de pesquisa](docs/pesquisa.md): evolução da proposta, incluindo o livro como gabarito.
+- [O que já existe e o que investigar](docs/escopo-da-pesquisa.md): distinção entre trabalhos existentes, decisões de implementação e hipóteses de contribuição.
+- [Falhas e plano de avaliação](docs/falhas-e-validacao.md): riscos, controles propostos e experimentos para verificar se esses controles funcionam.
 - [Primeiro experimento](docs/primeiro-experimento.md): proposta inicial para transformar a ideia em uma avaliação concreta.
 
 ## Estado atual

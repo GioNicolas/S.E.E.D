@@ -4,6 +4,8 @@
 
 O treinamento com regras conhecidas como gabarito melhora a capacidade de formular regras corretas e fazer previsões em problemas novos?
 
+Essa pergunta avalia uma etapa do projeto, mas não estabelece novidade: há precedentes próximos para esse treinamento. A investigação seguinte deve avaliar se os controles do S.E.E.D. reduzem conclusões falsas sem impedir a recuperação de regras válidas, sob o mesmo orçamento. Ver [escopo da pesquisa](escopo-da-pesquisa.md).
+
 ## Ambiente inicial sugerido
 
 Um ambiente numérico simples de movimento, sem interface gráfica obrigatória. O aprendiz observa variáveis como força, massa, velocidade e tempo, dentro de condições explicitamente definidas. A implementação do ambiente e o livro do aprendiz ficam separados.
@@ -18,6 +20,7 @@ Começar com descoberta de relações simples. Depois incluir regras com condiç
 4. Solicitar hipótese, condições de aplicação e previsões para casos não observados.
 5. Usar o livro como gabarito no treinamento, sem expor as respostas da avaliação final ao aprendiz.
 6. Comparar o sistema treinado com uma versão equivalente sem esse treinamento, usando o mesmo orçamento de experimentos.
+7. Incluir um método existente apropriado como referência e, nas etapas seguintes, remover controles individualmente para avaliar sua contribuição.
 
 ## O que medir
 
@@ -26,6 +29,9 @@ Começar com descoberta de relações simples. Depois incluir regras com condiç
 - Número de experimentos até obter uma hipótese adequada.
 - Desempenho em famílias de regras que ficaram fora do treino.
 - Nas etapas posteriores, aceitação de bugs como regras e identificação de condições ausentes.
+- Recuperação de regras válidas e proporção de regras falsas entre as aceitas, para evitar que rejeitar tudo pareça uma melhora.
+
+As etapas com dados imperfeitos seguirão os cenários do [plano de falhas e avaliação](falhas-e-validacao.md). Ainda é necessário definir valores, limiares e critérios de sucesso antes da execução.
 
 ## Limites da conclusão
 

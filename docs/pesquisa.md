@@ -8,9 +8,11 @@ Combinar conhecimento explícito, experimentação em um ambiente virtual e atua
 
 O livro representa o conhecimento atualmente aceito. Cada versão pode ser preservada; novas evidências podem motivar revisões e rollback. A aceitação de uma regra não equivale a uma verdade universal.
 
-## Nova ideia: o livro como gabarito
+## Ideia incorporada ao projeto: o livro como gabarito
 
 Proposta do autor: usar regras conhecidas para avaliar e treinar um modelo que tenta deduzir regras a partir de situações e observações.
+
+Essa proposta foi registrada no brainstorming do S.E.E.D., mas possui precedentes próximos na literatura. "Neural Symbolic Regression that Scales" treina um modelo para recuperar expressões a partir de exemplos gerados por equações conhecidas. Não reivindicamos originalidade desse princípio. Ver [escopo da pesquisa](escopo-da-pesquisa.md).
 
 Fluxo de treinamento proposto:
 
@@ -59,8 +61,12 @@ Auxiliar na formulação de hipóteses, na organização de relatórios e na exp
 
 ## Trabalhos próximos consultados
 
+- [Neural Symbolic Regression that Scales — ICML 2021](https://proceedings.mlr.press/v139/biggio21a.html): treinamento com equações conhecidas e seus exemplos para prever expressões simbólicas.
+- [Science-Gym — artigo publicado em 7 de janeiro de 2026](https://link.springer.com/article/10.1007/s10994-025-06914-x): ambientes e avaliações para coleta autônoma de dados, escolha de experimentos e descoberta de equações; é um testbed, não uma solução universal.
 - [DreamCoder](https://arxiv.org/abs/2006.08381): aprendizado de programas e abstrações simbólicas reutilizáveis.
 - [AI Feynman](https://arxiv.org/abs/1905.11481): busca de expressões matemáticas que expliquem dados.
 - [Specification gaming — DeepMind](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/): exemplos de exploração de objetivos mal especificados e defeitos em ambientes.
 
 Essas referências situam componentes da proposta. Ainda não foi feita uma revisão sistemática da literatura nem demonstrada a originalidade da combinação.
+
+As falhas discutidas e os testes propostos estão registrados no [plano de avaliação](falhas-e-validacao.md). Nenhum controle foi implementado ou validado até o momento.
