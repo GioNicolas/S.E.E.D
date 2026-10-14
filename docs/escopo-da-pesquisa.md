@@ -31,6 +31,8 @@ São decisões de implementação. Só uma comparação com a literatura e resul
 
 ## Uma hipótese de contribuição a investigar
 
+O objetivo do autor é descobrir um novo algoritmo. A direção atual é um mecanismo que use a estrutura dos erros para orientar revisão de hipóteses, escolha de experimentos e aprendizado reutilizável. A integração de um segundo modelo é uma opção de arquitetura; a possível contribuição algorítmica depende de definir precisamente como essas operações e atualizações funcionam. Ver [diagnóstico e revisão](diagnostico-e-revisao.md).
+
 Uma direção possível é combinar aprendizado com gabarito, escolha de experimentos, tratamento explícito de incerteza e revisão de conhecimento para reduzir a aceitação de regras falsas em ambientes com dados imperfeitos.
 
 Pergunta proposta: sob o mesmo orçamento de experimentos, o sistema consegue manter boas previsões e descobrir regras úteis, aceitando menos conclusões falsas quando há ruído, livro incompleto ou defeitos do ambiente?

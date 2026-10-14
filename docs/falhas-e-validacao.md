@@ -21,6 +21,7 @@ Estado geral: todos os controles abaixo são propostas. Nenhum risco foi demonst
 | F13 | Ruído, variáveis ocultas ou mudança do ambiente confundem a revisão. | Registrar qualidade das medições e distinguir mudança de contexto de mudança de regra. | Variar ruído e introduzir fatores ocultos; medir erro, confiança e pedidos de evidência adicional. |
 | F14 | LLM ou humano aprova/rejeita hipóteses sem suporte; triagem perde descobertas. | Preservar relatórios brutos, decisões e evidências; auditar uma amostra das hipóteses rejeitadas. | Comparar decisões com verificações independentes e medir falsos descartes e falsas aprovações. |
 | F15 | Busca e curadoria ficam caras ou não terminam. | Definir orçamento de consultas, tempo e critérios de parada. | Comparar qualidade das descobertas, consumo de recursos e fila de revisão sob orçamento fixo. |
+| F16 | Modelo de diagnóstico inventa um motivo convincente e a revisão o aceita sem teste. | Manter explicações alternativas, ligar diagnósticos aos dados e exigir previsões discriminantes. | Inserir diagnósticos incorretos; verificar se os experimentos os refutam e se o sistema preserva incerteza. |
 
 ## Ordem sugerida
 
@@ -46,3 +47,5 @@ Comparar com um método existente apropriado ao domínio e com versões do S.E.E
 Experimentos finitos não provam funcionamento universal. Uma simulação isolada pode não permitir distinguir bug e lei. Testes em mundos sintéticos avaliam o comportamento do método nesses mundos; extrapolação para o mundo real exige evidência adicional.
 
 Referências e contexto: [escopo da pesquisa](escopo-da-pesquisa.md). Exemplos de exploração de objetivos e defeitos: [DeepMind — Specification gaming](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/).
+
+Detalhamento da proposta de módulo especializado: [diagnóstico e revisão](diagnostico-e-revisao.md).

@@ -50,6 +50,18 @@ Ainda precisamos especificar a representação das regras, a geração de hipót
 
 Auxiliar na formulação de hipóteses, na organização de relatórios e na explicação dos resultados. A avaliação deve se apoiar em evidências e verificadores adequados, com registro das saídas e decisões de triagem. O modelo de linguagem não será tratado como prova de verdade.
 
+## Direção incorporada: aprender com o diagnóstico de erros
+
+Objetivo confirmado pelo autor: investigar um novo algoritmo, indo além de integrar componentes existentes.
+
+A hipótese de mecanismo é substituir um retorno apenas binário por informação estruturada sobre as falhas: onde uma hipótese não explica os resultados, quais mudanças poderiam corrigi-la e que experimentos distinguem essas possibilidades. Investigar se o aprendiz consegue reutilizar estratégias de diagnóstico e revisão em problemas novos.
+
+Proposta do autor: integrar outro modelo, possivelmente especializado, para interpretar os erros, sugerir explicações e testes. Esse papel complementa a triagem e revisão de regras por LLM sugerida originalmente. Diagnóstico é uma hipótese testável; não equivale a uma causa comprovada.
+
+Fluxo proposto: hipótese → teste → detecção de discrepância → diagnósticos candidatos → experimento discriminante → revisão da hipótese → registro para aprendizado posterior.
+
+Detalhes, limites e avaliação estão em [diagnóstico e revisão](diagnostico-e-revisao.md).
+
 ## Questões em aberto
 
 - Qual domínio inicial permite uma avaliação pequena e verificável?
