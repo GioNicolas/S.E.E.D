@@ -2,6 +2,8 @@
 
 Registro: 14 de outubro de 2026.
 
+Esclarecimento de 15/10/2026: o diagnóstico de erros é um componente proposto para o [novo modelo de ML pretendido pelo autor](direcao-do-modelo.md), com algoritmo e arquitetura próprios e objetivo de menor custo computacional. A tabela v0.1 mencionada abaixo é uma hipótese auxiliar, sem definir a arquitetura principal.
+
 Estado: proposta conceitual autorizada para registro pelo autor. Ainda não existe implementação, treinamento ou demonstração de originalidade.
 
 ## Objetivo de pesquisa
@@ -60,6 +62,8 @@ Separar famílias de regras e mecanismos de falha entre treino e avaliação. No
 
 Guardar episódios numa memória e atualizar os parâmetros de um modelo são mecanismos distintos. Precisamos definir como a experiência altera efetivamente a estratégia de diagnóstico e demonstrar sua reutilização em problemas novos.
 
+Atualização de 15/10/2026: a [proposta operacional v0.1](mecanismo-de-aprendizado.md) especifica uma primeira resposta. A hipótese simbólica muda dentro da tarefa; entre tarefas, uma tabela de resultados por contexto/operação aprende a ordem das revisões. A biblioteca de operações e o plano de intervenção são fixos nesta versão, sem treinamento de rede neural. Demonstrar transferência, aprender novos operadores e aprender a escolha dos experimentos continuam sendo questões de pesquisa.
+
 ## Como avaliar a contribuição
 
 Comparar retorno binário, discrepâncias numéricas, diagnóstico estruturado por modelo existente e o mecanismo especializado proposto, sob recursos comparáveis. Medir recuperação de regras válidas, conclusões falsas, erro de previsão, custo e transferência.
@@ -67,6 +71,8 @@ Comparar retorno binário, discrepâncias numéricas, diagnóstico estruturado p
 Incluir diagnósticos errados para avaliar se os testes conseguem refutá-los. Verificar se a melhora depende da escolha de experimentos, do diagnóstico ou apenas de mais consultas ao modelo.
 
 ## O que ainda falta inventar ou definir
+
+A v0.1 fornece uma especificação inicial limitada para representação, revisão e atualização da política. Os itens abaixo permanecem em aberto para a arquitetura ampla; as escolhas iniciais ainda não foram implementadas ou validadas.
 
 - Representação computável dos tipos de erro e operações de revisão.
 - Procedimento para gerar, comparar e atualizar diagnósticos candidatos.

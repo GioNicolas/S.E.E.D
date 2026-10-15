@@ -2,6 +2,12 @@
 
 Registro inicial: 14 de outubro de 2026.
 
+## Esclarecimento da direção principal — 15/10/2026
+
+O autor confirmou que pretende investigar um novo modelo de ML, com algoritmo e arquitetura próprios, que aprenda regras e relações e resolva problemas, buscando capacidades comparáveis às dos LLMs com menor custo computacional. O S.E.E.D. é o modelo pretendido; livro, experimentos e diagnóstico são componentes propostos de seu aprendizado. Economia no treinamento, na inferência ou em ambos permanece como pergunta, sem prioridade definida.
+
+As perguntas sobre representação, atualização do aprendiz, descoberta, resolução de problemas, generalização e avaliação de custo foram registradas na [direção principal](direcao-do-modelo.md). Esse esclarecimento prevalece sobre interpretações anteriores que restringiam o projeto à política tabular. A tabela v0.1 é uma hipótese auxiliar, sem implementação obrigatória ou evidência de substituir LLMs.
+
 ## Proposta inicial
 
 Combinar conhecimento explícito, experimentação em um ambiente virtual e atualização controlada de regras. O fluxo proposto inclui hipóteses, triagem assistida por modelo de linguagem, revisão humana, testes em staging e promoção para uma versão de produção.
@@ -20,7 +26,7 @@ Fluxo de treinamento proposto:
 2. Apresentar situações e resultados ao aprendiz, sem revelar a resposta-alvo.
 3. Solicitar uma hipótese explícita e previsões para novos casos.
 4. Comparar a hipótese e as previsões com o gabarito por verificações apropriadas ao domínio.
-5. Usar o retorno para ajustar o aprendiz; o método de ajuste ainda precisa ser definido.
+5. Usar o retorno para ajustar o aprendiz; a [proposta v0.1](mecanismo-de-aprendizado.md), de 15/10/2026, especifica uma tabela de resultados para priorizar revisões. O treinamento de um modelo gerador permanece em aberto.
 
 O objetivo é investigar se o sistema aprende procedimentos de descoberta que se transferem para problemas novos. Treinar e avaliar nas mesmas regras pode medir memorização, sem demonstrar essa transferência.
 
@@ -44,7 +50,7 @@ Registrar condições, evidências, confiança, exceções e versão. Uma anomal
 
 ### Definir o mecanismo de descoberta
 
-Ainda precisamos especificar a representação das regras, a geração de hipóteses, a escolha de experimentos e o método de aprendizado. Aprender ações por recompensa não garante produzir explicações simbólicas corretas.
+Para a arquitetura ampla, precisamos especificar a representação das regras, a geração de hipóteses, a escolha de experimentos e o método de aprendizado. A proposta v0.1 registrada abaixo fornece escolhas iniciais limitadas para começar. Aprender ações por recompensa não garante produzir explicações simbólicas corretas.
 
 ## Papel proposto para o modelo de linguagem
 
@@ -62,7 +68,15 @@ Fluxo proposto: hipótese → teste → detecção de discrepância → diagnós
 
 Detalhes, limites e avaliação estão em [diagnóstico e revisão](diagnostico-e-revisao.md).
 
+## Proposta operacional registrada em 15/10/2026
+
+O [mecanismo de aprendizado v0.1](mecanismo-de-aprendizado.md) distingue a descoberta da regra de uma tarefa do aprendizado entre tarefas. Propõe atualizar contagens e médias de sucesso para cada contexto de erro e operação de revisão; a política resultante altera a ordem das tentativas futuras. Começa com quatro operações fixas sobre expressões simples e intervenções predefinidas. A geração de novas operações, a escolha aprendida de experimentos e o treinamento de uma rede ficam para etapas posteriores.
+
+O [protocolo da política de revisão](primeiro-experimento.md) avalia essa política sob orçamento controlado, caso esse experimento auxiliar seja realizado. O estudo anterior sobre gabarito fica registrado como direção histórica, sem resultados. Essa proposta não estabelece originalidade nem presume melhora; suas restrições não definem o modelo principal.
+
 ## Questões em aberto
+
+Há escolhas iniciais para domínio, representação e atualização na v0.1. As perguntas abaixo continuam relevantes para ampliar o sistema e avaliar se essas escolhas são suficientes.
 
 - Qual domínio inicial permite uma avaliação pequena e verificável?
 - Qual formato de regra admite hipóteses e verificações automáticas?

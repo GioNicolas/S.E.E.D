@@ -2,6 +2,12 @@
 
 Registro: 14 de outubro de 2026.
 
+## Direção principal esclarecida em 15/10/2026
+
+A ambição confirmada pelo autor é investigar um novo modelo de ML, com algoritmo e arquitetura próprios, aprendizado de regras e relações e menor custo computacional frente a capacidades selecionadas dos LLMs. A comparação deve considerar qualidade, generalização e custos totais; a prioridade entre treinamento e inferência continua aberta. Ver [direção principal e perguntas](direcao-do-modelo.md).
+
+O diagnóstico de erros é uma direção de mecanismo dentro dessa investigação. A proposta da tabela de operações é auxiliar e não define o modelo pretendido. Sua execução e eventual melhora não demonstrariam substituição de LLMs ou eficiência geral comparável.
+
 ## A distinção principal
 
 Há métodos existentes para aprender expressões, programas e abstrações simbólicas a partir de exemplos. Há também ambientes para avaliar agentes que escolhem experimentos e descobrem equações.
@@ -49,4 +55,6 @@ Se as observações não distinguirem as hipóteses, o resultado esperado é man
 
 Comparar métodos existentes, a combinação completa e versões com componentes removidos. Uma melhora reproduzível em confiabilidade, custo ou transferência pode apoiar uma contribuição no domínio avaliado. Um protótipo que apenas reúne componentes existentes pode ainda ser útil, sem demonstrar um novo algoritmo.
 
-Estado: hipótese de pesquisa, sem implementação ou resultados. Originalidade da combinação ainda não estabelecida.
+Atualização de 15/10/2026: a [especificação operacional v0.1](mecanismo-de-aprendizado.md) propõe aprendizado tabular da ordem de operações fixas de revisão, condicionado a assinaturas de erro. É uma referência implementável para testar se a experiência melhora a busca. Não demonstra uma contribuição nova: a política, a representação de contexto e a biblioteca precisam ser comparadas com alternativas. A escolha aprendida de experimentos e a geração de novos operadores permanecem fora dessa versão.
+
+Estado: hipótese de pesquisa com uma primeira especificação operacional, sem implementação ou resultados. Originalidade da combinação ainda não estabelecida.
