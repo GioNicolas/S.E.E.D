@@ -14,15 +14,22 @@ Há métodos existentes para aprender expressões, programas e abstrações simb
 
 O que falta definir no S.E.E.D. não é necessariamente algo que falta em toda a área. Precisamos escolher métodos, implementar uma combinação concreta e comparar seu comportamento com trabalhos próximos. A existência de componentes anteriores não demonstra que o sistema proposto seja equivalente a eles; a ausência de uma implementação nossa não demonstra uma lacuna científica inédita.
 
-## Componentes com precedentes
+## Atualização de 16/10/2026 — O "Degrau Inédito" (Arquitetura A + B)
 
-| Componente | Referência próxima | O que ela demonstra ou oferece |
-| --- | --- | --- |
-| Aprender a recuperar uma regra usando respostas conhecidas no treino | [Neural Symbolic Regression that Scales, 2021](https://proceedings.mlr.press/v139/biggio21a.html) | Equações geradas e exemplos numéricos são usados no treinamento para prever expressões simbólicas. |
-| Aprender abstrações simbólicas com componentes neurais | [DreamCoder](https://arxiv.org/abs/2006.08381) | Um sistema aprende programas e amplia uma biblioteca de abstrações reutilizáveis. |
-| Escolher experimentos e buscar equações a partir dos dados obtidos | [Science-Gym, 2026](https://link.springer.com/article/10.1007/s10994-025-06914-x) | Um testbed disponibiliza simulações e protocolos para avaliar agentes nesses processos, incluindo métodos de referência. |
+A arquitetura principal do S.E.E.D. foi formalizada em [Arquitetura e Algoritmo S.E.E.D. (A + B)](arquitetura-seed-a-b.md). A conferência das referências, também em 16/10/2026, mostrou que cada peça já tem precedente próximo. A comparação detalhada e a hipótese de contribuição revisada estão na seção 1 daquele documento.
 
-Esses trabalhos têm escopos específicos. Recuperar equações em tarefas avaliadas não equivale a aprender toda a lógica do mundo ou garantir correção universal.
+## Componentes com precedentes (até 2026)
+
+| Componente | Referência próxima | O que ela demonstra | Limitação que o S.E.E.D. (A + B) ataca |
+| --- | --- | --- | --- |
+| Aprender a recuperar uma regra usando respostas conhecidas no treino | [Neural Symbolic Regression that Scales, 2021](https://proceedings.mlr.press/v139/biggio21a.html) | Equações geradas e exemplos numéricos são usados no treinamento para prever expressões simbólicas. | Modelo neural estático; não constrói grafo modular multi-regime nem faz intervenção ativa. |
+| Aprender abstrações simbólicas com componentes neurais | [DreamCoder, 2021](https://arxiv.org/abs/2006.08381) | Um sistema aprende programas e amplia uma biblioteca de abstrações reutilizáveis. | Busca enumerativa/wake-sleep cara; não utiliza a topologia do resíduo para editar regras nem particiona regimes. |
+| Modelos de mundo simbólicos em código | *WorldCoder* (NeurIPS 2024), *Code World Models* (2025) | Representar leis do ambiente como código modular evita esquecimento catastrófico e dá alta eficiência amostral. | **Dependem de chamar uma LLM gigante** em loop para diagnosticar erros e reescrever o código (alto custo computacional). |
+| Edição local de árvores de expressão com LLMs | [FunctionEvolve, 2026](https://arxiv.org/abs/2606.07704) | Edições locais preservam sub-expressões úteis; uma LLM propõe as mutações. | As mutações dependem de uma LLM; o S.E.E.D. propõe operadores numéricos. |
+| Correção guiada pelo resíduo | [RED, 2025](https://arxiv.org/abs/2511.05586) (sem LLM); [RISR, 2026](https://arxiv.org/abs/2610.11387) (com LLM) | RED troca só a sub-expressão que o resíduo indica; RISR usa visões aditiva e multiplicativa do resíduo. | Trabalham num conjunto de dados fixo, sem guardas de domínio nem revisão contínua de um Livro. |
+| Divisão em regimes | [Árvores de decisão simbólicas, 2026](https://arxiv.org/abs/2605.24275) | Aprendem juntas as condições de cada regime e a equação local. | Aprendizado em lote; o S.E.E.D. propõe criar regimes de forma incremental. |
+| Escolha ativa de experimentos em regressão simbólica | [Medina e White et al.](https://arxiv.org/abs/2305.10379) | Escolhe o experimento onde as equações candidatas mais discordam. | Não trata regimes nem revisão de um Livro existente. |
+| Ambientes de avaliação científica ativa | [Science-Gym, 2026](https://link.springer.com/article/10.1007/s10994-025-06914-x) | Testbed com simulações para avaliar agentes que escolhem experimentos e descobrem equações. | É um ambiente de benchmark, não uma nova arquitetura de aprendizado. |
 
 ## O que precisamos decidir para construir o projeto
 

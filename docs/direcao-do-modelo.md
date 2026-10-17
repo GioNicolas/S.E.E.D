@@ -51,10 +51,13 @@ Essa proposta estreitou demais a intenção do autor quando foi apresentada como
 
 Os documentos anteriores serão preservados como histórico e hipótese auxiliar. A implementação da tabela não é um próximo passo obrigatório, e suas restrições não definem a arquitetura principal. A prioridade de pesquisa deve ser escolhida em função das perguntas acima e da hipótese central do novo modelo.
 
-## O que está decidido e o que permanece em aberto
+## O que está decidido e o avanço de 16/10/2026
 
-**Decidido:** a direção principal é investigar um novo modelo de ML, com algoritmo e arquitetura próprios, aprendizado de regras e relações e objetivo de eficiência computacional frente a capacidades selecionadas dos LLMs.
+**Decidido (15/10/2026):** a direção principal é investigar um novo modelo de ML, com algoritmo e arquitetura próprios, aprendizado de regras e relações e objetivo de eficiência computacional frente a capacidades selecionadas dos LLMs.
 
-**Em aberto:** o mecanismo concreto, a representação, a regra de atualização, as primeiras tarefas, a referência de comparação e a prioridade entre custo de treino e inferência.
+**Formalizado em 16/10/2026 ([Arquitetura e Algoritmo S.E.E.D. A + B](arquitetura-seed-a-b.md)):**
+- **Representação (Parte A):** Grafo Simbólico Condicionado ($\mathcal{G}_t$), composto por módulos algébricos reutilizáveis protegidos por guardas explícitas de domínio ($P_k(\mathbf{x})$), envelopes de incerteza ($\sigma_k$) e âncoras de regressão ($\mathcal{L}_k$).
+- **Algoritmo de Aprendizado (Parte B):** Evolução Estrutural Guiada pela Topologia do Resíduo (separando anomalias isoladas, desvios algébricos aditivos/multiplicativos e quebras de regime/fronteira) acoplada a Sondagem Ativa Discriminante — **operando sem LLM no loop**.
+- **Consequência pretendida (Parte C):** revisar continuamente livros imperfeitos, preservando o que já funcionava e extrapolando fora da faixa observada. São hipóteses: as âncoras só protegem os casos armazenados, e uma fórmula explícita pode extrapolar mal.
 
-Não há implementação, treinamento, resultados ou demonstração de originalidade. Este registro corrige o escopo da investigação e preserva as perguntas que devem orientar o próximo desenho técnico.
+**Revisão de 16/10/2026:** a conferência da literatura mostrou que cada peça já tem precedente (ver a seção 1 da [arquitetura](arquitetura-seed-a-b.md) e os [trabalhos relacionados clássicos](trabalhos-relacionados-classicos.md)). O projeto foi pausado; o [README](../README.md) registra a direção sugerida caso seja retomado.
